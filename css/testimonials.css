@@ -1,0 +1,41 @@
+.testimonials{
+     /* padding: 2rem 10rem; */
+      text-align: center;
+}
+
+.testimonial-container {
+     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.testimonial{
+   background: #1a1a1a;
+    padding: 1.5rem;
+     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+       transition: transform 0.3s ease-in-out;
+    text-align: left;
+       flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+}
+.testimonial:hover{
+  transform: translateY(-3px);
+}
+.review-text{
+    font-size: .9rem;
+  line-height: 1.5;
+  color: #ddd;
+    margin-bottom: 1rem;
+}
+
+.review-info{
+    display: flex;
+    justify-content: space-between;
+    font-size: .8rem;
+    color: #ddd;
+}
+.review-rating{
+  color: #00E8FF;
+}

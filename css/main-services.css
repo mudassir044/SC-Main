@@ -1,0 +1,140 @@
+/* services.css */
+
+.services {
+    text-align: center;
+    background-image: url('../assets/images/service-background.jpg'); /* Add background Image*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Add background attachment fixed */
+}
+
+.services p {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.services-carousel {
+    display: flex;
+    overflow-x: auto;
+    padding: 1rem;
+    gap: 1.5rem;
+     margin: 0 -1rem;
+     scroll-snap-type: x mandatory;
+}
+
+.services-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.services-carousel::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.service-card {
+   background: #fff;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    flex: 0 0 auto;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card .service-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.service-card .service-content h3 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, #5800FF 0%, #00E8FF 100%);
+   -webkit-background-clip: text;
+    background-clip: text;
+     color: transparent;
+}
+
+.service-card p {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.service-card a {
+    display: inline-block;
+     background: linear-gradient(90deg, #5800FF 0%, #00E8FF 100%);
+    padding: 10px 20px;
+     color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: transform 0.3s ease-in-out;
+    margin-top: auto;
+}
+
+.service-card a:hover {
+    transform: scale(1.05);
+}
+
+.services-container {
+    position: relative;
+}
+
+.services-container button {
+     background: linear-gradient(90deg, #5800FF 0%, #00E8FF 100%);
+    border: none;
+    padding: 10px 20px;
+     color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    margin-top: 2rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.services-container button.show {
+    display: block;
+}
+
+.services-container button:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .services-carousel {
+        margin: 0 -1rem;
+    }
+
+    .service-card {
+        min-width: 250px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .service-card a {
+        align-self: center;
+    }
+}

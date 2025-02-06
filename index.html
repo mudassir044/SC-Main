@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Consultants - Outsource Smart, Scale Fast</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/calculator.css">
+    <link rel="stylesheet" href="css/why-choose.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/outsourcing.css">
+    <link rel="stylesheet" href="css/mindmap.css">
+    <link rel="stylesheet" href="css/testimonials.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./assets/logo-Star-Consultants.PNG" alt="Star Consultants Logo">
+            <span class="logo-text">Star Consultants</span>
+        </div>
+        <button class="hamburger-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="menu">
+            <li><a href="/pages/services.html">Services</a></li>
+            <li><a href="/pages/about.html">About Us</a></li>
+            <li><a href="/pages/careers.html">Careers</a></li>
+            <li><a href="/pages/blog.html">Blog</a></li>
+        </ul>
+        <div class="cta-buttons">
+            <button class="get-quote" data-modal-id="contact-modal">Get Quote</button>
+             <button class="talk-sales">Talk to Sales</button>
+            <div class="modal" data-modal-id="contact-modal">
+                <div class="modal-content">
+                    <span class="close-modal">×</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <section class="hero">
+        <div class="hero-background">
+            <img src="./assets/hero-background.jpg" alt="Hero Background Image">
+             <img src="./assets/white-background.jpg" alt="Hero Background Image">
+             <img src="./assets/pexels-photo-4065133.jpeg" alt="Hero Background Image">
+        </div>
+        <div class="hero-container">
+            <h1 class="hero-headline">Transform Your <span>Business</span> with Us</h1>
+            <p class="hero-subheading">At Star Consultants, we offer comprehensive outsourcing solutions tailored to your needs. Our expertise spans BPO, tech solutions, and more, ensuring seamless operations and growth.</p>
+            <div class="hero-buttons">
+                <button class="hero-button">Learn More</button>
+                <button class="hero-button">Our Services</button>
+            </div>
+        </div>
+    </section>
+    <section class="calculator">
+        <h2>Unlock Your Savings Potential: The Outsourcing Advantage</h2>
+        <p>Curious about the impact of smart outsourcing on your bottom line? Our interactive calculator lets you explore the possibilities, providing a clear, data-driven projection of your potential savings. Select your role, input a salary range, choose your add-ons and watch the savings come to life.</p>
+        <div class="calculator-content">
+            <div class="calculator-settings">
+                <div class="calculator-role">
+                    <label for="role-select">Select Role</label>
+                    <select class="role-select" id="role-select">
+                        <option value="customer-support">Customer Support</option>
+                        <option value="tech-support">Tech Support</option>
+                        <option value="virtual-assistance">Virtual Assistance</option>
+                    </select>
+                </div>
+                <div class="calculator-us-salary">
+                    <label for="salary-slider">Annual US Salary</label>
+                    <input type="range" id="salary-slider" min="30000" max="200000" value="80000">
+                    <span class="slider-value" id="salary-value">$80,000</span>
+                </div>
+                <div class="calculator-sub-role">
+                    <label>Select a Sub-Role</label>
+                    <div class="sub-role-buttons" id="sub-role-buttons">
+                    </div>
+                </div>
+                <div class="calculator-add-ons">
+                    <label>Add-Ons</label>
+                    <div class="checkbox-buttons" id="checkbox-buttons">
+                        <label><input type="checkbox" name="add-on" value="management">Project Management</label>
+                        <label><input type="checkbox" name="add-on" value="reporting">Weekly Reporting</label>
+                        <label><input type="checkbox" name="add-on" value="priority">Priority Support </label>
+                    </div>
+                </div>
+            </div>
+            <div class="calculator-output">
+                <h3>Potential yearly Savings</h3>
+                <div class="price-display">
+                    $<span id="billed-price">1500</span>
+                </div>
+                <p class="commitment-text">No Hidden Fees! Flexible Contracts</p>
+            </div>
+        </div>
+         <div class="calculator-footer">
+             <p>Ready to move from speculation to substantial savings? Discover how our custom outsourcing strategies can create real value for your business. Get your free consultation and step into a new chapter of growth.</p>
+             <button class="get-quote">Get Started with Your Free Consultation</button>
+        </div>
+    </section>
+    <section class="why-choose">
+        <h2>Why Choose Star Consultants? Because Your Business Deserves More.</h2>
+        <div class="why-choose-grid">
+            <div class="feature">
+                <div class="icon">
+                    <img src="./assets/icons/money-icon.png" alt="Up to 75% Savings Icon">
+                </div>
+                <h3>Up to 75% Cost Savings: Transformative Results</h3>
+                <p>Don't just save—reinvest. Our strategic outsourcing strategies cut operational expenses by up to 75%, allowing you to allocate funds where they matter most. It's not just about saving money; it's about fueling your growth.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">
+                    <img src="./assets/icons/payroll-icon.png" alt="No Payroll Hassles Icon">
+                </div>
+                <h3>Goodbye Payroll Nightmares: Seamless Solutions</h3>
+                <p>Say farewell to the endless cycle of payroll complexities. We navigate all local regulations and compliance issues for you, making sure your finances are managed flawlessly and transparently, always.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">
+                    <img src="./assets/icons/tax-icon.png" alt="No Taxes, No Benefits Icon">
+                </div>
+                <h3>No Taxes, No Benefits</h3>
+                <p>Avoid the burden of taxes and employee benefits. You pay only for the services you need, simplifying your financial obligations.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">
+                   <img src="./assets/icons/vetted-icon.png" alt="Vetted Professionals Icon">
+                </div>
+                <h3>Elite Vetted Talent: Your Competitive Edge</h3>
+                 <p>Our selection process goes beyond just skills; we choose partners with the drive and work ethic to become true members of your team. Our highly skilled and thoroughly vetted professionals become an extension of your team to support your vision.</p>
+             </div>
+        </div>
+    </section>
+     <section class="services">
+        <h2>Explore Our World-Class Outsourcing Solutions</h2>
+         <p>Discover the services that can unlock your business's full potential. From dynamic customer support to advanced technical solutions, our services are crafted to grow your business.</p>
+        <div class="services-container">
+        <div class="services-carousel">
+            <div class="service-card">
+                <div class="service-content">
+                     <img src="./assets/images/customer-support.jpg" alt="Customer Support">
+                     <h3>Customer Support That Cares: Building Loyalty, One Interaction at a Time</h3>
+                    <p>Deliver remarkable customer experiences with a support team that’s as dedicated as you are. From problem resolution to personalized care, our professionals become the voice of your brand, creating lasting relationships with your customers.</p>
+                     <a href="/pages/service1.html">Unlock Exceptional Customer Support</a>
+                </div>
+            </div>
+             <div class="service-card">
+                <div class="service-content">
+                    <img src="./assets/images/tech-support.jpg" alt="Tech Support">
+                    <h3>Technical Prowess: Empowering Your Business</h3>
+                     <p>Keep your technology running flawlessly with our expert technical support team. Our experienced professionals deliver seamless IT support, so you can run your business without the worries and inefficiencies of downtime.</p>
+                    <a href="/pages/service2.html">Explore Expert Tech Support</a>
+                </div>
+            </div>
+             <div class="service-card hidden">
+                <div class="service-content">
+                       <img src="./assets/images/virtual-assistant.jpg" alt="Virtual Assistant">
+                     <h3>Virtual Assistants: Your Productivity Partners</h3>
+                      <p>Gain back your valuable time and elevate your productivity with our virtual assistants. From managing the small, yet time-consuming daily tasks to executing research or social media management, we provide support to help you focus on the big picture.</p>
+                    <a href="/pages/service3.html">Meet Your New Virtual Assistant</a>
+                </div>
+             </div>
+              <div class="service-card hidden">
+                 <div class="service-content">
+                      <img src="./assets/images/project-management.jpg" alt="Project Management">
+                     <h3>Project Management Excellence: Guiding Your Success</h3>
+                      <p>Navigate your projects with precision with our expert project management team. We are dedicated to your success, with streamlined processes, timely execution, and the right resources, to keep your vision and objectives on track.</p>
+                    <a href="#">Optimize Your Project Management</a>
+                 </div>
+             </div>
+             <div class="service-card hidden">
+                <div class="service-content">
+                    <img src="./assets/images/business-process.jpeg" alt="Business Process">
+                  <h3>Business Process Optimization: Efficiency Engineered for Growth</h3>
+                   <p>Transform your workflows with our business process outsourcing strategies. Improve efficiency, enhance scalability, and bring a new level of sophistication to your day to day operations. We take care of the details, so you can get back to innovation.</p>
+                    <a href="#">Streamline Your Business Processes</a>
+                </div>
+             </div>
+            </div>
+               <button class="show-more-services">Show More Services</button>
+        </div>
+    </section>
+    <section class="outsourcing-models">
+        <h2>Customizable Outsourcing Models: Choose What Works For You</h2>
+        <p>Not every business is the same, so we’ve curated various outsourcing models to meet every need. Whether it’s talent nearby, or from across the globe, we will match you with the perfect professional.</p>
+        <div class="outsourcing-grid">
+            <div class="model-card">
+                <h3>Onshore: Local Talent, Global Results</h3>
+                <p>Connect with top-tier talent within your own country for direct communication and cultural familiarity. Seamless integration with no time-zone differences.</p>
+            </div>
+            <div class="model-card">
+                <h3>Nearshore: The Best of Both Worlds</h3>
+                <p>Partner with professionals in nearby countries, blending time-zone efficiency with cost-effective talent acquisition. We connect you to the talent you need, with easy communication and cultural alignment.</p>
+            </div>
+            <div class="model-card">
+                <h3>Offshore: Global Reach, Maximum Value</h3>
+                <p>Explore global talent opportunities in overseas locations, accessing specialized skills and maximizing cost savings. We connect you with a talented team from all across the globe, so you can reach your business goals without limits.</p>
+            </div>
+        </div>
+         <p class="operations-center">Our global operations are powered from our center in Pakistan, an ever-evolving technology hub, that houses some of the brightest minds. Serving businesses across the US, Europe, Canada, and Australia, we’re a global team with a global perspective. Come join the revolution and partner with us.</p>
+    </section>
+    <section class="mindmap">
+        <h2>A Seamless Journey: How Our Outsourcing Process Works</h2>
+         <p>We have created a transparent, efficient outsourcing process that makes sure each project is a success. From the first discussion to the continuous collaboration, we’re your partners at every step of the way.</p>
+        <div class="mindmap-timeline">
+             <div class="mindmap-node">
+                <div class="node-inner">
+                   <i class="fa-solid fa-users"></i>
+                 <h3>Understanding Your Vision</h3>
+                   <p>Our journey begins with you. We delve deep into understanding your unique needs, objectives, and overall vision to ensure the best resources and talent are allocated to your project.</p>
+                </div>
+            </div>
+            <div class="mindmap-node">
+                <div class="node-inner">
+                   <i class="fa-solid fa-handshake"></i>
+                 <h3>Crafting Your Personalized Solution</h3>
+                  <p>We thoroughly assess your specific requirements and goals to design a personalized outsourcing solution. We lay the ground work for a successful partnership.</p>
+                 </div>
+           </div>
+            <div class="mindmap-node">
+               <div class="node-inner">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>Connecting with the Right Talent</h3>
+                <p>Leveraging our large network of vetted professionals, we match you with the perfect talent to meet your specific requirements. This ensures your project is in the best possible hands.</p>
+               </div>
+           </div>
+            <div class="mindmap-node">
+                <div class="node-inner">
+                    <i class="fa-solid fa-file-contract"></i>
+                   <h3>Setting the Stage for Success</h3>
+                  <p>We establish clear terms and transparent agreements that create the foundation for a healthy and productive partnership. We take care of all the administrative complexities, so you can focus on your goals.</p>
+               </div>
+           </div>
+            <div class="mindmap-node">
+              <div class="node-inner">
+                  <i class="fa-solid fa-rocket"></i>
+                   <h3>Integrating with Your Team</h3>
+                 <p>Our seamless onboarding process connects you with your team and puts all the necessary resources in place for a smooth, quick start. We remove the barriers so you can get to work immediately.</p>
+              </div>
+           </div>
+             <div class="mindmap-node">
+                 <div class="node-inner">
+                     <i class="fa-solid fa-chart-line"></i>
+                  <h3>Building Your Future, Together</h3>
+                   <p>Our collaboration doesn't stop at the start of the project. We remain focused on continuous collaboration, performance monitoring, and improvement, all the while ensuring your team and objectives are meeting your strategic goals and creating sustained business growth.</p>
+               </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials">
+        <h2>Real Results, Real Stories: What Our Clients Are Saying</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p class="review-text">"The team at Star Consultants has not only met, but exceeded all expectations. Their dedication, expertise, and professionalism are unlike any other."</p>
+                <p class="review-info"> <span class="review-client">US Practice of Dentals</span>  <span class="review-rating">⭐⭐⭐⭐⭐</span></p>
+            </div>
+            <div class="testimonial">
+                <p class="review-text">"I was completely blown away by their problem solving capabilities and their proactive approach to every issue. Their tech solutions have revolutionized our operations and helped us scale. Highly Recommend their services!"</p>
+                <p class="review-info"><span class="review-client">Tech Startup</span> <span class="review-rating">⭐⭐⭐⭐</span></p>
+            </div>
+            <div class="testimonial">
+                <p class="review-text">"With Star Consultants, I've found an incredible partner that is instrumental in my business's efficiency and growth. Their virtual assistants have transformed our processes, and I am extremely happy with their service. A must for every business owner."</p>
+                <p class="review-info"> <span class="review-client">E-commerce Business Owner</span>   <span class="review-rating">⭐⭐⭐⭐⭐</span></p>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Your Success Story Starts Here: Connect With Us</h2>
+         <p>Ready to see how outsourcing can be a catalyst for your success? Please fill out the form below to begin the journey, or reach out to us directly at <a href='mailto:info@starconsultants.online'>info@starconsultants.online</a>. Let's discuss how we can scale your business!</p>
+        <div class="contact-form-container">
+            <div class="modal-content">
+                <div id="form-message" class="form-message"></div>
+                <form class="contact-form" action="https://formsubmit.co/muddassir@starconsultants.online" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission!">
+                    <input type="hidden" name="_next" value="index.html">
+                    <input type="hidden" name="_autoresponse" value="Thank You for Contacting us. We'll reach out to you soon">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <label for="document">Upload Document:</label>
+                    <input type="file" id="document" name="document">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="faq">
+        <h2>Your Questions Answered: The Outsourcing Details</h2>
+        <div class="faq-container">
+            <div class="faq-tabs">
+                <button class="faq-tab active" data-tab="services">Services</button>
+                <button class="faq-tab" data-tab="cost">Cost</button>
+                 <button class="faq-tab" data-tab="operations">Operations</button>
+                <button class="faq-tab" data-tab="quality">Quality</button>
+            </div>
+             <div class="faq-content active" data-content="services">
+                <div class="faq-list">
+                      <div class="faq-item">
+                        <h3>What specific outsourcing services does Star Consultants provide?</h3>
+                        <p>Star Consultants specializes in delivering a comprehensive range of outsourcing services, tailored to meet diverse business needs. Our expertise spans across a range of vital functions, including Customer Support, offering unparalleled customer engagement; Technical Support, ensuring the seamless operation of your business infrastructure; Virtual Assistants, designed to elevate your productivity; strategic Project Management, ensuring that your business objectives are achieved on time and within budget; and Business Process Optimization, streamlining your processes for sustained business growth.</p>
+                      </div>
+                 </div>
+            </div>
+             <div class="faq-content" data-content="cost">
+               <div class="faq-list">
+                     <div class="faq-item">
+                        <h3>How can I expect to see cost savings through outsourcing with Star Consultants?</h3>
+                        <p>Partnering with Star Consultants opens a pathway to significant cost reductions, with savings of up to 75% when compared to hiring locally. Through outsourcing, you gain access to a global talent pool and cut down on overhead costs such as salary, benefits, and taxes. In addition to immediate cost savings, our outsourcing services help you optimize operations and free up financial resources so you can invest back into your core business activities.</p>
+                      </div>
+                </div>
+           </div>
+            <div class="faq-content" data-content="operations">
+              <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>Where is your outsourcing operations center located? And what is the geographical scope of your work?</h3>
+                        <p>Our primary operations hub is located in Pakistan, a central hub for technology and talent, offering cutting edge infrastructure and some of the brightest minds in the industry. Our operational scope is not limited to a single location, but instead extends to a global network, serving a diverse clientele across various countries, including the US, Europe, Canada, Australia, and more. Regardless of location, we guarantee streamlined communication and world-class outsourcing solutions that are designed to grow your business.</p>
+                     </div>
+                </div>
+            </div>
+            <div class="faq-content" data-content="quality">
+                 <div class="faq-list">
+                     <div class="faq-item">
+                        <h3>How do you guarantee the talent and service quality you provide?</h3>
+                        <p>At Star Consultants, we’re deeply committed to only the highest standards of quality, and our process demonstrates that. We use an intensive selection process where we vet only the most skilled, dedicated, and experienced professionals in their respective fields. Additionally, we offer trial periods so you can experience their performance first hand, before forming a long-term partnership, with constant monitoring to guarantee that you are getting nothing but the best. We take the time to understand your individual requirements, so you only get the best solution, that’s tailored for your specific needs.</p>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer-container">
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="/pages/about.html">About Us</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="/pages/blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h3>Social Links</h3>
+            <ul>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Facebook</a></li>
+            </ul>
+        </div>
+        <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <input type="email" placeholder="Your Email">
+            <button>Subscribe</button>
+        </div>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/calculator.js"></script>
+<script src="js/animations.js"></script>
+<script src="https://kit.fontawesome.com/8a4465a1ca.js" crossorigin="anonymous"></script>
+</body>
+</html>

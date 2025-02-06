@@ -1,0 +1,123 @@
+/* contact.css */
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.contact button {
+     background: linear-gradient(90deg, #5800FF 0%, #00E8FF 100%);
+    border: none;
+    padding: 12px 25px;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    margin: 0 10px 15px 10px;
+    font-weight: 500;
+     white-space: nowrap;
+}
+
+.contact button:hover {
+    transform: scale(1.05);
+}
+
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.modal-content {
+    background-color: #e6e6fa;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form input[type="file"]:focus {
+      border-color: #e1b8af;
+    box-shadow: 0 0 0 0.2rem rgba(225,184,175,0.25);
+}
+
+.contact-form button {
+       background: linear-gradient(90deg, #5800FF 0%, #00E8FF 100%);
+    border: none;
+    padding: 10px 20px;
+     color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.contact-form button:hover {
+    transform: scale(1.05);
+}
+
+.form-message {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form-message.show {
+    display: block;
+}
+
+.form-message.success {
+    background: #34a853;
+     color: #ffffff;
+}
+
+.form-message.error {
+     background: #ea4335;
+     color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .contact-form-container {
+        padding: 0 10px;
+    }
+
+    .modal-content {
+        width: 100%;
+    }
+}

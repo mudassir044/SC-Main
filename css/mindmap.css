@@ -1,0 +1,81 @@
+/* mindmap.css */
+
+.mindmap {
+    text-align: center;
+}
+
+.mindmap-timeline {
+    position: relative;
+    display: flex;
+    overflow-x: auto;
+     padding: 2rem 1rem;
+     margin: 0 -1rem;
+    gap: 2rem;
+}
+
+.mindmap-timeline::-webkit-scrollbar {
+    height: 8px;
+}
+
+.mindmap-timeline::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.mindmap-node {
+    text-align: center;
+    color: #555;
+    transition: transform 0.3s ease-in-out;
+    flex: 0 0 auto;
+    width: 280px;
+     display: flex;
+    flex-direction: column;
+     align-items: center;
+    position: relative;
+}
+
+.mindmap-node:hover {
+    transform: scale(1.03);
+}
+
+.mindmap-node .node-inner {
+    background: #f1e5d4;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mindmap-node:hover .node-inner {
+    transform: scale(1.05);
+}
+
+.mindmap-node i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #00E8FF;
+}
+
+.mindmap-node h3 {
+   font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.mindmap-node p {
+  font-size: .85rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .mindmap-timeline {
+        margin: 0 -1rem;
+         padding: 1rem;
+    }
+
+    .mindmap-node {
+        width: 250px;
+    }
+}

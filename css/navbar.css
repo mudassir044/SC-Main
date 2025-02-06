@@ -1,0 +1,149 @@
+/* navbar.css */
+
+.navbar {
+   background: rgba(255, 255, 255, 0);  /* Initially transparent background */
+ box-shadow: none; /* No initial box-shadow */
+  backdrop-filter: blur(0);
+ -webkit-backdrop-filter: blur(0); /* remove blur on load */
+ border: none; /* No border on load */
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 0.5rem 3rem;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ z-index: 1000;
+ height: 50px;
+ overflow: hidden;
+ transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease ; /* Transition for background */
+}
+
+.navbar.scrolled { /* Add this class when you scroll */
+background: rgba(255, 255, 255, 0.3);
+ box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  backdrop-filter: blur(4px);
+ -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar ul {
+ list-style: none;
+ padding: 0;
+ display: flex;
+ transition: all 0.3s ease;
+   justify-content: center;
+ flex: 1;
+}
+
+.navbar ul li {
+ margin-left: 15px;
+}
+
+.navbar a {
+ text-decoration: none;
+ color: #333;
+ font-weight: 400;
+  cursor: pointer; /* Added cursor pointer for menu links */
+}
+
+.navbar a:hover {
+ color: #e1b8af;
+}
+
+.navbar .cta-buttons {
+ display: flex;
+ gap: 1rem;
+ margin-left: auto;
+ padding-right: 5rem;
+}
+
+.navbar .cta-buttons button {
+background: linear-gradient(90deg, #5800FF 0%, #00E8FF 100%);
+ border: none;
+ padding: 8px 15px;
+ color: #ffffff;
+ border-radius: 5px;
+ cursor: pointer;
+ transition: transform 0.3s ease-in-out;
+ font-weight: 500;
+ white-space: nowrap;
+}
+
+.navbar .cta-buttons button:hover {
+ transform: scale(1.05);
+}
+
+.navbar .logo {
+ display: flex;
+ align-items: center;
+}
+
+.navbar .logo img {
+ max-width: 80px;
+ max-height: 35px;
+}
+
+.navbar .logo-text {
+ font-family: 'Poppins', sans-serif;
+ font-size: 1.1rem;
+ margin-left: 10px;
+ color: #333;
+ font-weight: 600;
+}
+
+.navbar .hamburger-menu {
+ display: none;
+ font-size: 24px;
+  color: #333;
+ cursor: pointer;
+ background: transparent;
+ border: none;
+ margin-left: auto;
+ z-index: 1001;
+}
+
+@media (max-width: 768px) {
+ .navbar {
+     height: auto;
+      padding: 0.5rem 1rem;
+     flex-wrap: wrap;
+ }
+
+ .navbar .menu,
+ .navbar .cta-buttons {
+      display: none;
+ }
+
+ .navbar .hamburger-menu {
+     display: flex;
+ }
+
+ .navbar .logo {
+     margin-right: auto;
+ }
+
+ .navbar .cta-buttons-container {
+     margin-left: auto;
+ }
+
+ .navbar.active .menu {
+     display: flex;
+     flex-direction: column;
+     position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+     backdrop-filter: blur(4px);
+     -webkit-backdrop-filter: blur(4px);
+     width: 100%;
+     top: 50px;
+     left: 0;
+     padding: 1rem 1rem;
+       /* Added display: flex; and removed display:none to fix it */
+ }
+
+ .navbar.active .menu li {
+     margin: 1rem 0;
+ }
+}

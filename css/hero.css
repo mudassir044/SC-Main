@@ -1,0 +1,168 @@
+/* hero.css */
+
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    min-height: 70vh;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 3s ease-in-out; /* Transition for fade effect */
+    animation: rotateBackground 10s linear infinite;
+}
+
+.hero-background img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.hero-background img:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.hero-background img:nth-child(3) {
+    animation-delay: 6s;
+}
+
+.hero.active .hero-background img {
+    opacity: 1;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    z-index: 1;
+    position: relative; /* To position the buttons */
+}
+
+.hero-headline {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.2; /* Add line-height for better text spacing */
+    position: relative;
+    margin-bottom: 1rem;
+    color: #ffffff; /* Updated text color to white */
+}
+
+.hero-headline span {
+    position: relative;
+}
+
+.hero-headline span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #5800FF 0%, #00E8FF 100%);
+    transition: all 1.5s ease-in-out; /* Animation transition */
+}
+
+.hero.active .hero-headline span::after {
+    width: 40%; /* The line is now 40% */
+}
+
+.hero-subheading {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    max-width: 500px; /* Added a max width to make sure its not too long on larger screens */
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.hero-button {
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 12px 25px;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    white-space: nowrap;
+        font-weight: 500;
+}
+
+.hero-button:hover {
+    transform: scale(1.05);
+}
+
+@keyframes rotateBackground {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 70vh;
+        padding: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-container {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-headline {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-subheading {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-buttons {
+        margin-top: 1rem;
+    }
+
+    .hero-button {
+        padding: 10px 15px;
+        font-size: .9rem;
+    }
+}
