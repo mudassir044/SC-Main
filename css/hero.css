@@ -28,8 +28,8 @@
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 3s ease-in-out; /* Transition for fade effect */
-    animation: rotateBackground 10s linear infinite;
+     transition: opacity 6s ease-in-out; /* Smoother Transition for fade effect */
+    animation: rotateBackground 20s linear infinite;
 }
 
 .hero-background img:nth-child(1) {
@@ -37,11 +37,11 @@
 }
 
 .hero-background img:nth-child(2) {
-    animation-delay: 3s;
+    animation-delay: 6.66s;
 }
 
 .hero-background img:nth-child(3) {
-    animation-delay: 6s;
+    animation-delay: 13.33s;
 }
 
 .hero.active .hero-background img {
@@ -64,26 +64,6 @@
     position: relative;
     margin-bottom: 1rem;
     color: #ffffff; /* Updated text color to white */
-}
-
-.hero-headline span {
-    position: relative;
-}
-
-.hero-headline span::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #5800FF 0%, #00E8FF 100%);
-    transition: all 1.5s ease-in-out; /* Animation transition */
-}
-
-.hero.active .hero-headline span::after {
-    width: 40%; /* The line is now 40% */
 }
 
 .hero-subheading {
@@ -116,21 +96,11 @@
 }
 
 @keyframes rotateBackground {
-    0% {
-        opacity: 0;
-    }
-
-    20% {
-        opacity: 1;
-    }
-
-    40% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
+    0% { opacity: 0; }       /* Starts invisible */
+   16.66% { opacity: 1; }    /* Visible for 5 seconds */
+    33.32% { opacity: 1; }
+    49.99% { opacity: 0; }   /* Starts fading out */
+    100% { opacity: 0; }   /* After 3 seconds from fading out the Image should be invisible */
 }
 
 @media (max-width: 768px) {

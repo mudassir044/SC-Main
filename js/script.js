@@ -189,4 +189,28 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', updateNavbar);
 
   updateNavbar();
+
+    // Load Footer using Javascript
+    async function loadFooter() {
+      try {
+        const response = await fetch('footer.html');
+        const footerHTML = await response.text();
+        document.getElementById('footer-container').innerHTML = footerHTML;
+
+          //  Optional:  If your footer has JavaScript dependencies (e.g., carousel, form validation),
+          //  you might need to initialize them here AFTER the footer HTML is loaded.
+          //  For example:
+          //  if (typeof initFooterScripts === 'function') {
+          //    initFooterScripts();
+          //  }
+
+      } catch (error) {
+        console.error('Error loading footer:', error);
+        document.getElementById('footer-container').innerHTML = '<p>Failed to load footer.</p>'; // Optional: Display an error message if loading fails
+      }
+    }
+
+    // Call the function to load the footer when the page loads
+    document.addEventListener('DOMContentLoaded', loadFooter);
+
 });
