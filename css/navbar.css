@@ -1,149 +1,209 @@
 /* navbar.css */
 
 .navbar {
-   background: rgba(255, 255, 255, 0);  /* Initially transparent background */
- box-shadow: none; /* No initial box-shadow */
+  background: rgba(255, 255, 255, 0);
+  box-shadow: none;
   backdrop-filter: blur(0);
- -webkit-backdrop-filter: blur(0); /* remove blur on load */
- border: none; /* No border on load */
- display: flex;
- justify-content: space-between;
- align-items: center;
- padding: 0.5rem 3rem;
- position: fixed;
- top: 0;
- left: 0;
- width: 100%;
- z-index: 1000;
- height: 50px;
- overflow: hidden;
- transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease ; /* Transition for background */
+  -webkit-backdrop-filter: blur(0);
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 50px;
+  overflow: hidden;
+  transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
 }
 
-.navbar.scrolled { /* Add this class when you scroll */
-background: rgba(255, 255, 255, 0.3);
- box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   backdrop-filter: blur(4px);
- -webkit-backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar ul {
- list-style: none;
- padding: 0;
- display: flex;
- transition: all 0.3s ease;
-   justify-content: center;
- flex: 1;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  transition: all 0.3s ease;
+  justify-content: center;
+  flex: 1;
 }
 
 .navbar ul li {
- margin-left: 15px;
+  margin-left: 15px;
 }
 
 .navbar a {
- text-decoration: none;
- color: #333;
- font-weight: 400;
-  cursor: pointer; /* Added cursor pointer for menu links */
+  text-decoration: none;
+  color: #333;
+  font-weight: 400;
+  cursor: pointer;
 }
 
 .navbar a:hover {
- color: #e1b8af;
+  color: #e1b8af;
 }
 
 .navbar .cta-buttons {
- display: flex;
- gap: 1rem;
- margin-left: auto;
- padding-right: 5rem;
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+  padding-right: 5rem;
 }
 
 .navbar .cta-buttons button {
-background: linear-gradient(90deg, #5800FF 0%, #00E8FF 100%);
- border: none;
- padding: 8px 15px;
- color: #ffffff;
- border-radius: 5px;
- cursor: pointer;
- transition: transform 0.3s ease-in-out;
- font-weight: 500;
- white-space: nowrap;
+  background: linear-gradient(90deg, #5800FF 0%, #00E8FF 100%);
+  border: none;
+  padding: 8px 15px;
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .navbar .cta-buttons button:hover {
- transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .navbar .logo {
- display: flex;
- align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .navbar .logo img {
- max-width: 80px;
- max-height: 35px;
+  max-width: 80px;
+  max-height: 35px;
 }
 
 .navbar .logo-text {
- font-family: 'Poppins', sans-serif;
- font-size: 1.1rem;
- margin-left: 10px;
- color: #333;
- font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  margin-left: 10px;
+  color: #333;
+  font-weight: 600;
 }
 
 .navbar .hamburger-menu {
- display: none;
- font-size: 24px;
+  display: none;
+  font-size: 24px;
   color: #333;
- cursor: pointer;
- background: transparent;
- border: none;
- margin-left: auto;
- z-index: 1001;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  margin-left: auto;
+  z-index: 1001;
+}
+
+/* Responsive adjustments for logo and text */
+@media (max-width: 768px) {
+  .navbar .logo img {
+      max-width: 60px;
+      max-height: 25px;
+  }
+
+  .navbar .logo-text {
+      font-size: 0.9rem;
+      margin-left: 5px;
+  }
+
+  /*Hamburger menu black background color only in mobile view */
+  .navbar .hamburger-menu {
+      background-color: #1a1a1a; /* Dark Black */
+      padding: 5px; /*Add padding to make it look better */
+      border-radius: 5px; /*Add rounded corners*/
+  }
 }
 
 @media (max-width: 768px) {
- .navbar {
-     height: auto;
+  .navbar {
+      height: auto;
       padding: 0.5rem 1rem;
-     flex-wrap: wrap;
- }
-
- .navbar .menu,
- .navbar .cta-buttons {
+      flex-wrap: wrap;
+      overflow: visible; /* Allow expanded content to show */
+  }
+ 
+  .navbar .menu,
+  .navbar .cta-buttons {
       display: none;
+  }
+
+  .navbar .hamburger-menu {
+      display: flex;
+  }
+
+  .navbar .logo {
+      margin-right: auto;
+  }
+
+  .navbar .cta-buttons-container {
+      margin-left: auto;
+  }
+
+/* Style the opened menu */
+  .navbar.active .menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    /*Remove background and shadow*/
+    background: rgba(0, 0, 0, 1); /*Black Background*/
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    padding: 1rem;
+  }
+
+/* Style the menu items (links) */
+ .navbar.active .menu li a {
+     color: white; /* White Text */
+     font-size: 1rem; /* Adjust font size */
+     font-weight: 500; /*Adjust font weight*/
+ }
+  .navbar.active .menu li a:hover {
+     color: #e1b8af; /* Hover Color if needed */
  }
 
- .navbar .hamburger-menu {
-     display: flex;
- }
+  .navbar.active .menu li {
+      margin: 1rem 0;
+  }
+}
 
- .navbar .logo {
-     margin-right: auto;
- }
+/* Mobile Menu Styles */
+.mobile-menu {
+ position: fixed;
+ top: 0;
+ left: -250px; /* Start hidden */
+ width: 250px;
+ height: 100%;
+ background: white;
+ box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+ transition: left 0.3s ease-in-out;
+ padding: 20px;
+ z-index: 1000;
+}
 
- .navbar .cta-buttons-container {
-     margin-left: auto;
- }
+/* Show when active */
+.mobile-menu.active {
+ left: 0;
+}
 
- .navbar.active .menu {
-     display: flex;
-     flex-direction: column;
-     position: absolute;
-    background: rgba(255, 255, 255, 0.3);
-     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-     backdrop-filter: blur(4px);
-     -webkit-backdrop-filter: blur(4px);
-     width: 100%;
-     top: 50px;
-     left: 0;
-     padding: 1rem 1rem;
-       /* Added display: flex; and removed display:none to fix it */
- }
-
- .navbar.active .menu li {
-     margin: 1rem 0;
- }
+/* Close button */
+.mobile-menu .close-btn {
+ position: absolute;
+ top: 15px;
+ right: 15px;
+ font-size: 20px;
+ cursor: pointer;
 }
