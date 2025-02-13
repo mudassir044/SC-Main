@@ -14,34 +14,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-</head>
-<body>
     <header>
         <nav class="navbar">
             <a href="/index.html" class="logo">
                 <img src="../assets/logo-Star-Consultants.PNG" alt="Star Consultants Logo" class="logo-img">
                 <span class="logo-text">Star Consultants</span>
-            </a>   
-        <button class="hamburger-menu">
-            <i class="fas fa-bars"></i>
-        </button>
-        <ul class="menu">
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="blog.html">Blog</a></li>
-        </ul>
-        <div class="cta-buttons">
-            <button class="get-quote" data-modal-id="contact-modal">Get Quote</button>
-             <button class="talk-sales">Talk to Sales</button>
-            <div class="modal" data-modal-id="contact-modal">
-                <div class="modal-content">
-                    <span class="close-modal">×</span>
+            </a>
+            <button class="hamburger-menu" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="menu">
+                <li><a href="/pages/services.html">Services</a></li>
+                <li><a href="/pages/about.html">About Us</a></li>
+                <li><a href="/pages/careers.html">Careers</a></li>
+                <li><a href="/pages/blog.html">Blog</a></li>
+            </ul>
+            <div class="cta-buttons">
+                <div class="hero-buttons">
+                    <button class="hero-button" onclick="openCalendlyModal()">Get Quote</button>
+                <button class="hero-button" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' });">Our Services</button>
+                <div class="modal" data-modal-id="contact-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">https://calendly.com/mudasirmuhammad044/interview-with-mudassir</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
 <main>
     <section class="about-hero">
         <div class="about-hero-container">

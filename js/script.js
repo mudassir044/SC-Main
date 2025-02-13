@@ -1,4 +1,40 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Mobile Menu Logic
+    const menu = document.querySelector(".mobile-menu");
+    const hamburgerMenu = document.querySelector(".hamburger-menu"); // Corrected selector
+    const closeBtn = document.querySelector(".close-btn");
+
+    if (hamburgerMenu && menu && closeBtn) {
+        hamburgerMenu.addEventListener("click", () => {
+            navbar.classList.toggle("active");
+            menu.classList.add("active");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            menu.classList.remove("active");
+        });
+    }
+
+    // Smooth scrolling to sections (ADDED)
+    const getQuoteButton = document.querySelector('.hero-buttons button:first-child'); // Select the first button
+    const ourServicesButton = document.querySelector('.hero-buttons button:last-child'); // Select the second button
+    if (getQuoteButton) {
+      getQuoteButton.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevent default link behavior
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    if (ourServicesButton) {
+      ourServicesButton.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevent default link behavior
+        document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    function openCalendlyModal() {
+        Calendly.initPopupWidget({ url: 'https://calendly.com/salesteam-sc/interview-with-mudassir' });
+        return false;
+    }
+    
     // Pop-up form logic
     const getQuoteButtons = document.querySelectorAll('.get-quote');
     const modals = document.querySelectorAll('.modal');
@@ -11,9 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const mindmapNodes = document.querySelectorAll('.mindmap-node');
     const servicesContainer = document.querySelector('.services-container');
     const showMoreButton = servicesContainer.querySelector('.show-more-services');
-    const hamburgerMenu = document.querySelector(".hamburger-menu");
-    const navbar = document.querySelector(".navbar");
-    const hero = document.querySelector(".hero");
     const nav = document.querySelector("nav");
     const faqTabs = document.querySelectorAll(".faq-tab");
     const faqContents = document.querySelectorAll(".faq-content");
@@ -36,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-
 
     if (modals) {
         modals.forEach(modal => {
@@ -189,28 +221,21 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', updateNavbar);
 
   updateNavbar();
-
-    // Load Footer using Javascript
-    async function loadFooter() {
-      try {
-        const response = await fetch('footer.html');
-        const footerHTML = await response.text();
-        document.getElementById('footer-container').innerHTML = footerHTML;
-
-          //  Optional:  If your footer has JavaScript dependencies (e.g., carousel, form validation),
-          //  you might need to initialize them here AFTER the footer HTML is loaded.
-          //  For example:
-          //  if (typeof initFooterScripts === 'function') {
-          //    initFooterScripts();
-          //  }
-
-      } catch (error) {
-        console.error('Error loading footer:', error);
-        document.getElementById('footer-container').innerHTML = '<p>Failed to load footer.</p>'; // Optional: Display an error message if loading fails
-      }
+  
+  // Added Calendly Integration for specified buttons
+  const calendlySelectors = [
+    '.hero-buttons button:first-child',
+    '.calculator-footer button.get-quote'
+  ];
+  calendlySelectors.forEach(selector => {
+    const btn = document.querySelector(selector);
+    if (btn) {
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        openCalendlyModal();
+      }, true);
     }
-
-    // Call the function to load the footer when the page loads
-    document.addEventListener('DOMContentLoaded', loadFooter);
+  });
 
 });

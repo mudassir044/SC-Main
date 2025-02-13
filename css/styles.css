@@ -167,3 +167,15 @@ p {
     padding: 15px;
    }
 }
+
+/* Partners Logo Styles */
+.partners-logo-container {
+    text-align: center; /* Center the logo horizontally */
+    margin-top: 1rem; /* Adjust spacing above the logo */
+    margin-bottom: 2rem; /* Adjust spacing below the logo */
+}
+
+.partners-logo {
+    max-width: 200px; /* Adjust the maximum width as needed */
+    height: auto; /* Maintain aspect ratio */
+}

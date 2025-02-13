@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Consultants - Outsource Smart, Scale Fast</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/calculator.css">
-    <link rel="stylesheet" href="css/why-choose.css">
-    <link rel="stylesheet" href="css/main-services.css">
-    <link rel="stylesheet" href="css/outsourcing.css">
-    <link rel="stylesheet" href="css/mindmap.css">
-    <link rel="stylesheet" href="css/testimonials.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/faq.css">
-    <link rel="stylesheet" href="css/footer.css"> <!-- Footer CSS is already here - Correct -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Star Consultants - Outsource Smart, Scale Fast</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/hero.css">
+        <link rel="stylesheet" href="css/calculator.css">
+        <link rel="stylesheet" href="css/why-choose.css">
+        <link rel="stylesheet" href="css/main-services.css">
+        <link rel="stylesheet" href="css/outsourcing.css">
+        <link rel="stylesheet" href="css/mindmap.css">
+        <link rel="stylesheet" href="css/testimonials.css">
+        <link rel="stylesheet" href="css/contact.css">
+        <link rel="stylesheet" href="css/faq.css">
+        <link rel="stylesheet" href="css/footer.css"> <!-- Footer CSS is already here - Correct -->
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
 <body>
 
 <header>
@@ -41,8 +42,9 @@
             <li><a href="/pages/blog.html">Blog</a></li>
         </ul>
         <div class="cta-buttons">
-            <button class="get-quote" data-modal-id="contact-modal">Get Quote</button>
-             <button class="talk-sales">Talk to Sales</button>
+            <div class="hero-buttons">
+                <button class="hero-button" onclick="openCalendlyModal()">Get Quote</button>
+            <button class="hero-button" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' });">Our Services</button>
             <div class="modal" data-modal-id="contact-modal">
                 <div class="modal-content">
                     <span class="close-modal">https://calendly.com/mudasirmuhammad044/interview-with-mudassir</span>
@@ -63,12 +65,12 @@
             <h1 class="hero-headline">Transform Your <span>Business</span> with Us</h1>
             <p class="hero-subheading">At Star Consultants, we offer comprehensive outsourcing solutions tailored to your needs. Our expertise spans BPO, tech solutions, and more, ensuring seamless operations and growth.</p>
             <div class="hero-buttons">
-                <button class="hero-button">Learn More</button>
+                <button class="hero-button" onclick="openCalendlyModal()">Get Quote</button>
                 <button class="hero-button">Our Services</button>
             </div>
         </div>
     </section>
-    <section class="calculator">
+    <section class="calculator" style="will-change: transform, opacity; transform: translateZ(0);">
         <h2>Unlock Your Savings Potential: The Outsourcing Advantage</h2>
         <p>Curious about the impact of smart outsourcing on your bottom line? Our interactive calculator lets you explore the possibilities, providing a clear, data-driven projection of your potential savings. Select your role, input a salary range, choose your add-ons and watch the savings come to life.</p>
         <div class="calculator-content">
@@ -108,9 +110,9 @@
                 <p class="commitment-text">No Hidden Fees! Flexible Contracts</p>
             </div>
         </div>
-         <div class="calculator-footer">
-             <p>Ready to move from speculation to substantial savings? Discover how our custom outsourcing strategies can create real value for your business. Get your free consultation and step into a new chapter of growth.</p>
-             <button class="get-quote">Get Started with Your Free Consultation</button>
+        <div class="calculator-footer"> 
+            <p>Ready to move from speculation to substantial savings? Discover how our custom outsourcing strategies can create real value for your business. Get your free consultation and step into a new chapter of growth.</p>
+            <button class="get-quote" onclick="openCalendlyModal()">Get Started with Your Free Consultation</button>
         </div>
     </section>
     <section class="why-choose"> 
@@ -161,7 +163,7 @@
             </div>
         </div>
     </section>    
-     <section class="services">
+    <section class="services" id="services">
         <h2>Explore Our World-Class Outsourcing Solutions</h2>
          <p>Discover the services that can unlock your business's full potential. From dynamic customer support to advanced technical solutions, our services are crafted to grow your business.</p>
         <div class="services-container">
@@ -211,7 +213,7 @@
         </div>
     </section>
     <section class="outsourcing-models">
-        <h2>Customizable Outsourcing Models: Choose What Works For You</h2>
+        <h2>Choose What Works For You</h2>
         <p>Not every business is the same, so we’ve curated various outsourcing models to meet every need. Whether it’s talent nearby, or from across the globe, we will match you with the perfect professional.</p>
         <div class="outsourcing-grid">
             <div class="model-card">
@@ -230,7 +232,7 @@
          <p class="operations-center">Our global operations are powered from our center in Pakistan, an ever-evolving technology hub, that houses some of the brightest minds. Serving businesses across the US, Europe, Canada, and Australia, we’re a global team with a global perspective. Come join the revolution and partner with us.</p>
     </section>
     <section class="mindmap">
-        <h2>A Seamless Journey: How Our Outsourcing Process Works</h2>
+        <h2>How Our Outsourcing Process Works</h2>
          <p>We have created a transparent, efficient outsourcing process that makes sure each project is a success. From the first discussion to the continuous collaboration, we’re your partners at every step of the way.</p>
         <div class="mindmap-timeline">
              <div class="mindmap-node">
@@ -278,7 +280,7 @@
         </div>
     </section>
     <section class="testimonials">
-        <h2>Real Results, Real Stories: What Our Clients Are Saying</h2>
+        <h2>What Our Clients Are Saying</h2>
         <div class="testimonial-container">
             <div class="testimonial">
                 <p class="review-text">"The team at Star Consultants has not only met, but exceeded all expectations. Their dedication, expertise, and professionalism are unlike any other."</p>
@@ -363,6 +365,10 @@
         </div>
     </section>
 </main>
+<!-- Partners Logo -->
+<div class="partners-logo-container">
+    <img src="./assets/designrush-logo.png" alt="Partners Logo" class="partners-logo">
+</div>
 <footer>
     <div class="footer-container">
         <div class="footer-links">
