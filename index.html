@@ -29,29 +29,37 @@
 <header>
     <nav class="navbar">
         <a href="/index.html" class="logo">
-            <img src="../assets/logo-Star-Consultants.PNG" alt="Star Consultants Logo" class="logo-img">
-            <span class="logo-text">Star Consultants</span>
+          <img src="../assets/logo-Star-Consultants.PNG" alt="Star Consultants Logo" class="logo-img">
+          <span class="logo-text">Star Consultants</span>
         </a>
-        <button class="hamburger-menu" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-        </button>
-        <ul class="menu">
+      
+        <!-- 1) The hidden checkbox that drives the hamburger -->
+        <input type="checkbox" id="toggle-menu" class="toggle-menu" />
+      
+        <!-- 2) The label that becomes the hamburger icon -->
+        <label for="toggle-menu" class="hamburger">
+          <!-- Optional spans for the hamburger lines -->
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      
+        <!-- 3) Navigation container (menu links + CTA buttons) -->
+        <div class="navigation">
+          <ul class="menu">
             <li><a href="/pages/services.html">Services</a></li>
             <li><a href="/pages/about.html">About Us</a></li>
             <li><a href="/pages/careers.html">Careers</a></li>
             <li><a href="/pages/blog.html">Blog</a></li>
-        </ul>
-        <div class="cta-buttons">
-            <div class="hero-buttons">
-                <button class="hero-button" onclick="openCalendlyModal()">Get Quote</button>
-            <button class="hero-button" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' });">Our Services</button>
-            <div class="modal" data-modal-id="contact-modal">
-                <div class="modal-content">
-                    <span class="close-modal">https://calendly.com/mudasirmuhammad044/interview-with-mudassir</span>
-                </div>
-            </div>
+          </ul>
+          <div class="cta-buttons hero-buttons">
+            <button class="hero-button" onclick="openCalendlyModal()">Get Quote</button>
+            <button class="hero-button" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' });">
+              Our Services
+            </button>
+          </div>
         </div>
-    </nav>
+      </nav>      
 </header>
 <main>
     <section class="hero">

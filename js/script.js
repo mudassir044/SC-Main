@@ -1,40 +1,57 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Mobile Menu Logic
     const menu = document.querySelector(".mobile-menu");
-    const hamburgerMenu = document.querySelector(".hamburger-menu"); // Corrected selector
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
     const closeBtn = document.querySelector(".close-btn");
+    const nav = document.querySelector("nav");
 
     if (hamburgerMenu && menu && closeBtn) {
         hamburgerMenu.addEventListener("click", () => {
-            navbar.classList.toggle("active");
+            nav.classList.toggle("active");
             menu.classList.add("active");
+            // Force menu to cover screen and be white with !important
+            menu.setAttribute("style", `
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                background-color: #fff !important;
+                z-index: 9999 !important;
+            `);
         });
 
         closeBtn.addEventListener("click", () => {
             menu.classList.remove("active");
+            menu.removeAttribute("style"); // Remove inline styles on close
         });
     }
 
     // Smooth scrolling to sections (ADDED)
-    const getQuoteButton = document.querySelector('.hero-buttons button:first-child'); // Select the first button
-    const ourServicesButton = document.querySelector('.hero-buttons button:last-child'); // Select the second button
+    const getQuoteButton = document.querySelector('.hero-buttons button:first-child');
+    const ourServicesButton = document.querySelector('.hero-buttons button:last-child');
+
+    // Force buttons to appear on mobile with !important
     if (getQuoteButton) {
-      getQuoteButton.addEventListener('click', function(event) {
-        event.preventDefault();  // Prevent default link behavior
-        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-      });
+        getQuoteButton.setAttribute("style", "display: inline-block !important;");
+        getQuoteButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
     }
     if (ourServicesButton) {
-      ourServicesButton.addEventListener('click', function(event) {
-        event.preventDefault();  // Prevent default link behavior
-        document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
-      });
+        ourServicesButton.setAttribute("style", "display: inline-block !important;");
+        ourServicesButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+        });
     }
+
     function openCalendlyModal() {
         Calendly.initPopupWidget({ url: 'https://calendly.com/salesteam-sc/interview-with-mudassir' });
         return false;
     }
-    
+
     // Pop-up form logic
     const getQuoteButtons = document.querySelectorAll('.get-quote');
     const modals = document.querySelectorAll('.modal');
@@ -47,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const mindmapNodes = document.querySelectorAll('.mindmap-node');
     const servicesContainer = document.querySelector('.services-container');
     const showMoreButton = servicesContainer.querySelector('.show-more-services');
-    const nav = document.querySelector("nav");
     const faqTabs = document.querySelectorAll(".faq-tab");
     const faqContents = document.querySelectorAll(".faq-content");
 
@@ -80,43 +96,34 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-
     if (talkToSalesButton) {
         talkToSalesButton.addEventListener('click', function () {
             window.open("https://calendly.com/muddassir-starconsultants", "_blank", "width=600,height=800");
         });
     }
 
-
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
         });
     });
 
     faqTabs.forEach(tab => {
-    tab.addEventListener("click", function() {
-       const tabId = this.getAttribute('data-tab');
-            faqTabs.forEach(tab => {
-                tab.classList.remove('active');
-            })
-            this.classList.add('active')
-
-            faqContents.forEach(content =>{
-                if (content.getAttribute('data-content') == tabId){
-                 content.classList.add('active')
+        tab.addEventListener("click", function() {
+            const tabId = this.getAttribute('data-tab');
+            faqTabs.forEach(tab => tab.classList.remove('active'));
+            this.classList.add('active');
+            faqContents.forEach(content => {
+                if (content.getAttribute('data-content') == tabId) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
                 }
-                   else{
-                 content.classList.remove('active')
-                   }
-            })
-        })
-   });
+            });
+        });
+    });
 
     if (contactForm) {
         const submitButton = contactForm.querySelector('button[type="submit"]');
@@ -131,19 +138,17 @@ document.addEventListener('DOMContentLoaded', function () {
                         method: 'POST',
                         body: formData,
                     });
-
                     if (response.ok) {
                         formMessage.textContent = 'Form submitted successfully!';
-                        formMessage.classList.remove('loading')
+                        formMessage.classList.remove('loading');
                         formMessage.classList.add('show', 'success');
                         contactForm.reset();
                         setTimeout(() => {
                             formMessage.classList.remove('show', 'success');
                         }, 3000);
-
                     } else {
                         formMessage.textContent = `Error, form submit failed.`;
-                        formMessage.classList.remove('loading')
+                        formMessage.classList.remove('loading');
                         formMessage.classList.add('show', 'error');
                         setTimeout(() => {
                             formMessage.classList.remove('show', 'error');
@@ -151,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 } catch (error) {
                     formMessage.textContent = `Error, form submit failed.`;
-                    formMessage.classList.remove('loading')
+                    formMessage.classList.remove('loading');
                     formMessage.classList.add('show', 'error');
                     setTimeout(() => {
                         formMessage.classList.remove('show', 'error');
@@ -161,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
+
     serviceCards.forEach(card => {
         card.addEventListener('mouseover', function () {
             this.style.transform = 'translateY(-5px)';
@@ -168,7 +174,8 @@ document.addEventListener('DOMContentLoaded', function () {
         card.addEventListener('mouseout', function () {
             this.style.transform = 'translateY(0)';
         });
-    })
+    });
+
     mindmapNodes.forEach(node => {
         node.addEventListener('mouseover', function () {
             this.style.transform = 'scale(1.03)';
@@ -176,12 +183,13 @@ document.addEventListener('DOMContentLoaded', function () {
         node.addEventListener('mouseout', function () {
             this.style.transform = 'scale(1)';
         });
-    })
-    if (hamburgerMenu){
+    });
+
+    if (hamburgerMenu) {
        hamburgerMenu.addEventListener("click", () => {
-           navbar.classList.toggle("active");
+           nav.classList.toggle("active");
        });
-   }
+    }
 
     // Services Section: Show more functionality
     const hiddenServices = servicesContainer.querySelectorAll('.service-card.hidden');
@@ -190,52 +198,47 @@ document.addEventListener('DOMContentLoaded', function () {
             hiddenServices.forEach(card => {
                 card.classList.remove('hidden');
             });
-            showMoreButton.classList.remove('show')
-        })
+            showMoreButton.classList.remove('show');
+        });
+    }
+    if (hiddenServices.length > 0) {
+        showMoreButton.classList.add('show');
     }
 
-    // Services Section: Show more button if there are more services
-    if (hiddenServices.length > 0) {
-        showMoreButton.classList.add('show')
-    }
     // Add class "active" to hero so it animates
     setTimeout(() => {
-        if (hero) {
+        if (typeof hero !== 'undefined' && hero) {
             hero.classList.add('active');
         }
-    }, 100)
+    }, 100);
 
-
-     // Change Navbar Style on Scroll
-     const heroSection = document.querySelector('.hero');
-  function updateNavbar() {
-    if (heroSection) {
-         if (window.scrollY > heroSection.offsetHeight) {
-             nav.classList.add('scrolled');
-         } else {
-            nav.classList.remove('scrolled');
-         }
-      }
-}
-
-  window.addEventListener('scroll', updateNavbar);
-
-  updateNavbar();
-  
-  // Added Calendly Integration for specified buttons
-  const calendlySelectors = [
-    '.hero-buttons button:first-child',
-    '.calculator-footer button.get-quote'
-  ];
-  calendlySelectors.forEach(selector => {
-    const btn = document.querySelector(selector);
-    if (btn) {
-      btn.addEventListener('click', function(e){
-        e.preventDefault();
-        e.stopImmediatePropagation();
-        openCalendlyModal();
-      }, true);
+    // Change Navbar Style on Scroll
+    const heroSection = document.querySelector('.hero');
+    function updateNavbar() {
+        if (heroSection) {
+            if (window.scrollY > heroSection.offsetHeight) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        }
     }
-  });
+    window.addEventListener('scroll', updateNavbar);
+    updateNavbar();
 
+    // Added Calendly Integration for specified buttons
+    const calendlySelectors = [
+        '.hero-buttons button:first-child',
+        '.calculator-footer button.get-quote'
+    ];
+    calendlySelectors.forEach(selector => {
+        const btn = document.querySelector(selector);
+        if (btn) {
+            btn.addEventListener('click', function(e){
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                openCalendlyModal();
+            }, true);
+        }
+    });
 });
