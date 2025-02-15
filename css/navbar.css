@@ -135,14 +135,15 @@
     align-items: flex-start;
   }
   /* Hide desktop sections on mobile */
-  .navbar-left,
   .navbar-center,
-  .navbar-right {
-    display: none;
-  }
+.navbar-right {
+  display: none;
+}
   /* Show mobile toggle and hamburger */
   .toggle-menu {
-    display: block;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
   }
   .hamburger {
     display: block;
