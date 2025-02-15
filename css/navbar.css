@@ -1,5 +1,6 @@
 /* navbar.css */
 
+/* Base Navbar Styles */
 .navbar {
   background: rgba(255, 255, 255, 0);
   box-shadow: none;
@@ -9,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 3rem;
+  padding: 0.5rem 2em;
   position: fixed;
   top: 0;
   left: 0;
@@ -17,9 +18,11 @@
   z-index: 1000;
   height: 50px;
   overflow: hidden;
-  transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease,
+              backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
 }
 
+/* When scrolled, apply a translucent background and blur */
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
@@ -28,39 +31,78 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.navbar ul {
+/* Navbar sections for Desktop */
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-center {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-right {
+  justify-content: flex-end;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  max-width: 80px;
+  max-height: 35px;
+}
+
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  margin-left: 10px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Desktop Menu */
+.menu {
   list-style: none;
   padding: 0;
   display: flex;
   transition: all 0.3s ease;
-  justify-content: center;
-  flex: 1;
+  margin: 0;
 }
 
-.navbar ul li {
-  margin-left: 15px;
+.menu li {
+  margin: 0 15px;
 }
 
-.navbar a {
+.menu li a {
   text-decoration: none;
   color: #333;
   font-weight: 400;
   cursor: pointer;
 }
 
-.navbar a:hover {
+.menu li a:hover {
   color: #e1b8af;
 }
 
-/* CTA Buttons for desktop */
-.navbar .cta-buttons {
+/* Desktop CTA Buttons */
+.cta-buttons {
   display: flex;
   gap: 1rem;
   margin-left: auto;
   padding-right: 5rem;
 }
 
-.navbar .cta-buttons button {
+.cta-buttons button {
   background: linear-gradient(90deg, #5800FF 0%, #00E8FF 100%);
   border: none;
   padding: 8px 15px;
@@ -72,78 +114,53 @@
   white-space: nowrap;
 }
 
-.navbar .cta-buttons button:hover {
+.cta-buttons button:hover {
   transform: scale(1.05);
 }
 
-.navbar .logo {
-  display: flex;
-  align-items: center;
-}
-
-.navbar .logo img {
-  max-width: 80px;
-  max-height: 35px;
-}
-
-.navbar .logo-text {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  margin-left: 10px;
-  color: #333;
-  font-weight: 600;
-}
-
-/* --- New Checkbox-Driven Hamburger Menu --- */
-
-/* Hide the checkbox control */
-.toggle-menu {
+/* Hide mobile toggle elements on desktop */
+.toggle-menu,
+.hamburger,
+.navigation {
   display: none;
 }
 
-/* Hamburger icon (the label for the checkbox) */
-.hamburger {
-  display: block;
-  margin-left: auto;  /* pushes it to the right */
-  padding: 10px;      /* adjust for extra space */
-  position: relative;
-  top: 5px;           /* adjust vertical alignment as needed */
-}
-.hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background: #333;
-  margin: 5px 0;
-}
-
-
-/* The navigation container holds both the menu links and (if needed) mobile CTA buttons */
-.navigation {
-  display: flex;
-  align-items: center;
-}
-
-/* --- Mobile Responsive Rules --- */
+/* Mobile Responsive Rules */
 @media (max-width: 768px) {
   .navbar {
     height: auto;
     padding: 0.5rem 1rem;
     flex-wrap: wrap;
     overflow: visible;
+    align-items: flex-start;
   }
-
-  /* Show the hamburger icon */
-  .hamburger {
-    display: block;
-  }
-
-  /* Hide desktop CTA buttons on mobile */
-  .cta-buttons {
+  /* Hide desktop sections on mobile */
+  .navbar-left,
+  .navbar-center,
+  .navbar-right {
     display: none;
   }
-
-  /* Hide the full navigation by default */
+  /* Show mobile toggle and hamburger */
+  .toggle-menu {
+    display: block;
+  }
+  .hamburger {
+    display: block;
+    margin-left: auto;
+    padding: 10px;
+    position: relative;
+    top: 5px;
+    cursor: pointer;
+  }
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 5px 0;
+    transition: background 0.3s ease;
+  }
+  /* Mobile Navigation Dropdown */
   .navigation {
     display: none;
     width: 100%;
@@ -151,36 +168,33 @@
     background: #fff;
     padding: 1rem;
     position: absolute;
-    top: 60px;  /* Adjust to position below navbar */
+    top: 60px;
     left: 0;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
-
-  /* When the checkbox is checked, show the navigation container */
+  /* Show mobile navigation when checkbox is checked */
   .toggle-menu:checked ~ .navigation {
     display: flex;
   }
-
-  /* Stack menu links vertically */
-  .menu {
+  /* Mobile menu list styling */
+  .navigation .menu {
     flex-direction: column;
     width: 100%;
   }
-  .menu li {
+  .navigation .menu li {
     margin: 1rem 0;
     text-align: center;
   }
-  .menu li a {
+  .navigation .menu li a {
     font-size: 1rem;
     font-weight: 500;
     color: #333;
   }
-  .menu li a:hover {
+  .navigation .menu li a:hover {
     color: #e1b8af;
   }
-
-  /* Optionally, if you want the CTA buttons inside the mobile menu, you can reintroduce them here */
-  /* For example, if you duplicate the buttons inside a container with the class "mobile-cta": */
+  /* Mobile CTA Buttons */
   .mobile-cta {
     display: flex;
     flex-direction: column;

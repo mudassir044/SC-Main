@@ -1,0 +1,46 @@
+  <!-- Navbar -->
+  <nav class="navbar">
+    <!-- Desktop Navbar Sections -->
+    <div class="navbar-left">
+      <a href="/index.html" class="logo">
+        <img src="../assets/logo-Star-Consultants.PNG" alt="Star Consultants Logo" class="logo-img" />
+        <span class="logo-text">Star Consultants</span>
+      </a>
+    </div>
+    <div class="navbar-center">
+      <ul class="menu">
+        <li><a href="/pages/services.html">Services</a></li>
+        <li><a href="/pages/about.html">About Us</a></li>
+        <li><a href="/pages/careers.html">Careers</a></li>
+        <li><a href="/pages/blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="navbar-right">
+      <div class="cta-buttons hero-buttons">
+        <button onclick="openCalendlyModal()">Get Quote</button>
+        <button onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' });">Our Services</button>
+      </div>
+    </div>
+
+    <!-- Mobile Toggle: Checkbox & Hamburger -->
+    <input type="checkbox" id="toggle-menu" class="toggle-menu" />
+    <label for="toggle-menu" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- Mobile Navigation Dropdown -->
+    <div class="navigation">
+      <ul class="menu">
+        <li><a href="/pages/services.html">Services</a></li>
+        <li><a href="/pages/about.html">About Us</a></li>
+        <li><a href="/pages/careers.html">Careers</a></li>
+        <li><a href="/pages/blog.html">Blog</a></li>
+      </ul>
+      <div class="mobile-cta">
+        <button onclick="openCalendlyModal()">Get Quote</button>
+        <button onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' });">Our Services</button>
+      </div>
+    </div>
+  </nav>

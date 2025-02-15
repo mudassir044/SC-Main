@@ -25,41 +25,53 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
 <body>
-
 <header>
-    <nav class="navbar">
-        <a href="/index.html" class="logo">
-          <img src="../assets/logo-Star-Consultants.PNG" alt="Star Consultants Logo" class="logo-img">
-          <span class="logo-text">Star Consultants</span>
-        </a>
-      
-        <!-- 1) The hidden checkbox that drives the hamburger -->
-        <input type="checkbox" id="toggle-menu" class="toggle-menu" />
-      
-        <!-- 2) The label that becomes the hamburger icon -->
-        <label for="toggle-menu" class="hamburger">
-          <!-- Optional spans for the hamburger lines -->
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-      
-        <!-- 3) Navigation container (menu links + CTA buttons) -->
-        <div class="navigation">
-          <ul class="menu">
-            <li><a href="/pages/services.html">Services</a></li>
-            <li><a href="/pages/about.html">About Us</a></li>
-            <li><a href="/pages/careers.html">Careers</a></li>
-            <li><a href="/pages/blog.html">Blog</a></li>
-          </ul>
-          <div class="cta-buttons hero-buttons">
-            <button class="hero-button" onclick="openCalendlyModal()">Get Quote</button>
-            <button class="hero-button" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' });">
-              Our Services
-            </button>
-          </div>
-        </div>
-      </nav>      
+  <!-- Navbar -->
+  <nav class="navbar">
+    <!-- Desktop Navbar Sections -->
+    <div class="navbar-left">
+      <a href="/index.html" class="logo">
+        <img src="../assets/logo-Star-Consultants.PNG" alt="Star Consultants Logo" class="logo-img" />
+        <span class="logo-text">Star Consultants</span>
+      </a>
+    </div>
+    <div class="navbar-center">
+      <ul class="menu">
+        <li><a href="/pages/services.html">Services</a></li>
+        <li><a href="/pages/about.html">About Us</a></li>
+        <li><a href="/pages/careers.html">Careers</a></li>
+        <li><a href="/pages/blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="navbar-right">
+      <div class="cta-buttons hero-buttons">
+        <button onclick="openCalendlyModal()">Get Quote</button>
+        <button onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' });">Our Services</button>
+      </div>
+    </div>
+
+    <!-- Mobile Toggle: Checkbox & Hamburger -->
+    <input type="checkbox" id="toggle-menu" class="toggle-menu" />
+    <label for="toggle-menu" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- Mobile Navigation Dropdown -->
+    <div class="navigation">
+      <ul class="menu">
+        <li><a href="/pages/services.html">Services</a></li>
+        <li><a href="/pages/about.html">About Us</a></li>
+        <li><a href="/pages/careers.html">Careers</a></li>
+        <li><a href="/pages/blog.html">Blog</a></li>
+      </ul>
+      <div class="mobile-cta">
+        <button onclick="openCalendlyModal()">Get Quote</button>
+        <button onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' });">Our Services</button>
+      </div>
+    </div>
+  </nav>
 </header>
 <main>
     <section class="hero">
@@ -69,13 +81,27 @@
              <img src="./assets/pexels-photo-4065133.jpeg" alt="Hero Background Image">
              <img src="./assets/new-background-hero.jpg" alt="Hero Background Image">
         </div>
-        <div class="hero-container">
-            <h1 class="hero-headline">Transform Your <span>Business</span> with Us</h1>
-            <p class="hero-subheading">At Star Consultants, we offer comprehensive outsourcing solutions tailored to your needs. Our expertise spans BPO, tech solutions, and more, ensuring seamless operations and growth.</p>
+        <div class="hero-container"> 
+            <h1 class="hero-headline">
+              Transform Your <span>Business</span> with Us
+            </h1>
+            <p class="hero-subheading">
+              At Star Consultants, we offer comprehensive outsourcing solutions tailored to your needs.
+              Our expertise spans BPO, tech solutions, and more, ensuring seamless operations and growth.
+            </p>
             <div class="hero-buttons">
-                <button class="hero-button" onclick="openCalendlyModal()">Get Quote</button>
-                <button class="hero-button">Our Services</button>
+              <!-- 1) Calendly link -->
+              <button class="hero-button" onclick="openCalendlyModal()">
+                Get Quote
+              </button>
+          
+              <!-- 2) Scroll to services section -->
+              <button class="hero-button"
+                      onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' });">
+                Our Services
+              </button>
             </div>
+          </div>          
         </div>
     </section>
     <section class="calculator" style="will-change: transform, opacity; transform: translateZ(0);">
@@ -304,7 +330,7 @@
             </div>
         </div>
     </section>
-    <section class="contact">
+    <section class="contact" id="contact">
         <h2>Connect With Us</h2>
          Let's discuss how we can scale your business!</p><a href='mailto:info@starconsultants.online'>info@starconsultants.online</a>
         <div class="contact-form-container">
@@ -375,7 +401,9 @@
 </main>
 <!-- Partners Logo -->
 <div class="partners-logo-container">
-    <img src="./assets/designrush-logo.png" alt="Partners Logo" class="partners-logo">
+    <a href="https://www.designrush.com/agency/it-services/outsourcing" target="_blank">
+        <img src="./assets/designrush-logo.png" alt="it outsourcing agency" class="partners-logo">
+    </a>
 </div>
 <footer>
     <div class="footer-container">

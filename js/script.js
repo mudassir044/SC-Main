@@ -10,15 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
             nav.classList.toggle("active");
             menu.classList.add("active");
             // Force menu to cover screen and be white with !important
-            menu.setAttribute("style", `
-                position: fixed !important;
-                top: 0 !important;
-                left: 0 !important;
-                width: 100% !important;
-                height: 100% !important;
-                background-color: #fff !important;
-                z-index: 9999 !important;
-            `);
+            menu.setAttribute("style", "position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; background-color: #fff !important; z-index: 9999 !important;");
+
         });
 
         closeBtn.addEventListener("click", () => {
@@ -216,13 +209,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const heroSection = document.querySelector('.hero');
     function updateNavbar() {
         if (heroSection) {
+            console.log('Scroll:', window.scrollY, 'Hero height:', heroSection.offsetHeight);
             if (window.scrollY > heroSection.offsetHeight) {
                 nav.classList.add('scrolled');
             } else {
                 nav.classList.remove('scrolled');
             }
         }
-    }
+    }    
     window.addEventListener('scroll', updateNavbar);
     updateNavbar();
 
