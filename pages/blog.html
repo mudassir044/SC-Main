@@ -12,36 +12,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
-<header>
-    <nav class="navbar">
-        <a href="/index.html" class="logo">
-            <img src="../assets/logo-Star-Consultants.PNG" alt="Star Consultants Logo" class="logo-img">
-            <span class="logo-text">Star Consultants</span>
-        </a>   
-        <button class="hamburger-menu">
-            <i class="fas fa-bars"></i>
-        </button>
-        <ul class="menu">
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="blog.html">Blog</a></li>
-        </ul>
-        <div class="cta-buttons">
-            <button class="get-quote" data-modal-id="contact-modal">Get Quote</button>
-             <button class="talk-sales">Talk to Sales</button>
-            <div class="modal" data-modal-id="contact-modal">
-                <div class="modal-content">
-                    <span class="close-modal">×</span>
-                </div>
-            </div>
-        </div>
-    </nav>
-</header>
+    <header>
+      <!-- External navbar will be loaded here -->
+      <div id="navbar-placeholder"></div>
+    </header>
 <main>
     <section class="blog-hero">
           <h2>Insights and Trends in Outsourcing</h2>
@@ -92,9 +71,10 @@
     </div>
 </footer>
 
-<script src="js/script.js"></script>
-<script src="js/calculator.js"></script>
-<script src="js/animations.js"></script>
-<script src="https://kit.fontawesome.com/8a4465a1ca.js" crossorigin="anonymous"></script>
+  <!-- Corrected script paths: from our services page (in /pages/) we need to go up one level -->
+  <script src="../js/script.js"></script>
+  <script src="../js/calculator.js"></script>
+  <script src="../js/animations.js"></script>
+  <script src="https://kit.fontawesome.com/8a4465a1ca.js" crossorigin="anonymous"></script>
 </body>
 </html>
