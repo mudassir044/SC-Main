@@ -1,5 +1,3 @@
-/* styles.css */
-
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f9f9f9; /* Primary Background */
@@ -8,6 +6,8 @@ body {
     padding: 0;
     overflow-x: hidden;
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 main {
@@ -178,4 +178,123 @@ p {
 .partners-logo {
     max-width: 200px; /* Adjust the maximum width as needed */
     height: auto; /* Maintain aspect ratio */
+}
+
+/* New styles for the landing page */
+header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+}
+
+#hero {
+    background-color: #e9ecef;
+    padding: 40px;
+    text-align: center;
+}
+
+.hero-content img {
+    max-width: 100%;  /* Make images responsive */
+    height: auto;
+    margin-top: 20px;
+}
+
+#why-choose-us {
+    padding: 40px;
+}
+
+#why-choose-us ul {
+    list-style: none;
+    padding: 0;
+}
+
+#why-choose-us li {
+    margin-bottom: 10px;
+}
+
+#what-we-offer, #outsourcing-options {
+    padding: 40px;
+    background-color: #f8f9fa;
+}
+
+#what-we-offer ul, #outsourcing-options ul {
+    list-style: none;
+    padding: 0;
+}
+
+#what-we-offer li, #outsourcing-options li {
+    margin-bottom: 10px;
+}
+
+#the-difference-we-make {
+    padding: 40px;
+    text-align: center;
+}
+
+#the-difference-we-make img {
+    max-width: 80%;
+    height: auto;
+    margin-top: 20px;
+}
+
+#quote {
+    background-color: #ffc107; /* Example: Yellow color */
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+    color: #333;
+}
+
+#pricing-plans {
+    padding: 40px;
+}
+
+#pricing-plans table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#pricing-plans th, #pricing-plans td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#pricing-plans th {
+    background-color: #f2f2f2;
+}
+
+#faq {
+    padding: 40px;
+    background-color: #e9ecef;
+}
+
+#faq dt {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#faq dd {
+    margin-bottom: 10px;
+}
+
+#get-started {
+    padding: 40px;
+    text-align: center;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #pricing-plans table {
+        overflow-x: auto; /* Enable horizontal scrolling for small screens */
+        display: block;
+    }
 }

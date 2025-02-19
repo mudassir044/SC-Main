@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const modals = document.querySelectorAll('.modal');
     const closeModalButtons = document.querySelectorAll('.close-modal');
     const talkToSalesButton = document.querySelector('.talk-sales');
-    const faqItems = document.querySelectorAll('.faq-item');
     const contactForm = document.querySelector('.contact-form');
     const formMessage = document.getElementById('form-message');
     const serviceCards = document.querySelectorAll('.service-card');
@@ -286,5 +285,124 @@ document.addEventListener('DOMContentLoaded', function () {
         }, true);
       }
     });
+
+    //Added smooth scroll for faq
+    document.querySelectorAll('#faq a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    //Customer support main page integration
+     // **Customer Support Modal + Calendly Integration:**
+        const customerSupportButton = document.querySelector('.call-to-action .cta-button');
+
+        if (customerSupportButton) {
+            customerSupportButton.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent any link behavior
+
+                // Open the modal
+                const modalId = this.getAttribute('data-modal-id');
+                const modal = document.querySelector(`.modal[data-modal-id="${modalId}"]`);
+                if (modal) {
+                    modal.style.display = 'flex';
+                }
+
+                // Open Calendly (if the function is defined)
+                if (typeof openCalendlyModal === 'function') {
+                    openCalendlyModal();
+                }
+            });
+        }
+
+   
+            // Select all question buttons
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+// Loop through each question button
+// faqQuestions.forEach(question => {
+//     // Add a click event listener to each question
+//     question.addEventListener('click', () => {
+//         // Close any other open answers except the one clicked
+//         faqQuestions.forEach(item => {
+//             if (item !== question) {
+//                 item.classList.remove('active'); // Remove 'active' class to reset arrow rotation
+//                 item.nextElementSibling.style.maxHeight = null; // Collapse the answer
+//             }
+//         });
+
+//         // Toggle 'active' class on the clicked question to rotate the arrow
+//         question.classList.toggle('active');
+
+//         // Select the corresponding answer div
+//         const answer = question.nextElementSibling;
+
+//         // Check if the answer is already open
+//         if (answer.style.maxHeight) {
+//             // If open, close it by resetting max-height
+//             answer.style.maxHeight = null;
+//         } else {
+//             // If closed, set max-height to scrollHeight to expand it
+//             answer.style.maxHeight = answer.scrollHeight + 'px';
+//         }
+//     });
+// });
+
+  } // End of initNavbar function
+
+// ==========================================================================
+//  SWIPER INITIALIZATION
+//  We initialize Swiper OUTSIDE of initNavbar()
+//  because Swiper doesn't depend on the navbar being loaded.
+// ==========================================================================
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 5,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-nexts",
+    prevEl: ".swiper-button-prevs",
+  },
+  mousewheel: true,
+  keyboard: true,
+  loop: true,
+  breakpoints: {
+
+    300: {
+      slidesPerView: 1
+    },
+
+    501: {
+      slidesPerView: 1
+    },
+
+    769: {
+      slidesPerView: 3,
+      spaceBetween: 10
+    },
+    1025: {
+      slidesPerView: 3,
+      spaceBetween: 10
+    },
   }
 });
+// ========================= END SWIPER INITIALIZATION =======================
+});
+
+$(document).ready(function() {
+  console.log("")
+            const faqs = document.querySelectorAll(".faq .faq-question-container");
+           
+            faqs.forEach(function(faq) {
+              faq.addEventListener("click", function() {
+                console.log(faq)
+                $(faq).parent().toggleClass("active");
+              });
+            });
+          })
